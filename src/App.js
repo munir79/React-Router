@@ -6,6 +6,7 @@ import Home from './Component/Home';
 import About from './Component/About';
 import Products from './Component/Products';
 import Friends from './Component/Friends';
+import FriendDetails from './Component/FriendDetails';
 
 
 function App() {
@@ -34,6 +35,15 @@ function App() {
     
           },
           element:<Friends></Friends>
+        },
+        {
+          path:'/friend/:friendID',
+          loader: async({params})=>{
+           console.log(params.friendID);
+           return fetch(`https://jsonplaceholder.typicode.com/users/${params.friendID}`);
+           
+          },
+          element:<FriendDetails></FriendDetails>
         }
       ]
      
