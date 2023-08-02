@@ -7,6 +7,8 @@ import About from './Component/About';
 import Products from './Component/Products';
 import Friends from './Component/Friends';
 import FriendDetails from './Component/FriendDetails';
+import Post from './Post/Post';
+import PostBody from './Post/PostBody';
 
 
 function App() {
@@ -44,6 +46,21 @@ function App() {
            
           },
           element:<FriendDetails></FriendDetails>
+        },
+        {
+          path:'/post',
+          loader:()=>{
+          return fetch('https://jsonplaceholder.typicode.com/posts')
+          },
+          element:<Post></Post>
+        },
+        {
+          path:'/post/:PostId',
+          loader:async ({params})=>{
+            return fetch (`https://jsonplaceholder.typicode.com/posts/${params.PostId}`)
+            
+          },
+          element:<PostBody></PostBody>
         }
       ]
      
