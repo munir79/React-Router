@@ -26,14 +26,19 @@ function App() {
         {
           path:'/product',
           element:<Products></Products>
+        },
+        {
+          path:'/friend',
+          loader:()=>{
+            return fetch('https://jsonplaceholder.typicode.com/users')
+    
+          },
+          element:<Friends></Friends>
         }
-      ],
+      ]
      
-    },
-    {
-      path:'/friend',
-      element:<Friends></Friends>
     }
+  
   
   ])
   return (

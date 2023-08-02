@@ -7,6 +7,7 @@ const Headr = () => {
             <Link to='/home'> Home</Link>
             <Link to='/about'>About</Link>
             <Link to='/product'>Products</Link>
+            <Link to='/friend'> Friends</Link>
         </div>
     );
 };
